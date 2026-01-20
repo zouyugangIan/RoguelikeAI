@@ -1,0 +1,18 @@
+[package]
+name = "roguelike-ai-app"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { workspace = true }
+
+[dependencies]
+tauri = { workspace = true }
+tauri-plugin-shell = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+ai-core = { path = "../crates/ai-core" }
+rag-engine = { path = "../crates/rag-engine" }
+ai-training = { path = "../crates/ai-training" }
+ai-evals = { path = "../crates/ai-evals" }

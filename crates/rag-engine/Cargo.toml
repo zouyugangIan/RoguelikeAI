@@ -1,0 +1,12 @@
+[package]
+name = "rag-engine"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+lancedb = { workspace = true }
+arrow-array = { workspace = true }
+serde = { workspace = true }
+tokio = { workspace = true }
+futures = { workspace = true }

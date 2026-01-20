@@ -1,0 +1,31 @@
+{
+  "productName": "RoguelikeAI",
+  "version": "0.1.0",
+  "identifier": "com.roguelike-ai.dev",
+  "build": {
+    "beforeDevCommand": "cd ../src-ui && dioxus serve",
+    "beforeBuildCommand": "cd ../src-ui && dioxus build",
+    "devUrl": "http://localhost:8080",
+    "frontendDist": "../src-ui/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "AI Forge",
+        "width": 1200,
+        "height": 800
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png"
+    ]
+  }
+}

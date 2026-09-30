@@ -6,7 +6,7 @@ members = [
     "crates/ai-evals",
     "src-tauri",
     "src-ui"
-]
+, "live"]
 resolver = "2"
 
 [workspace.dependencies]

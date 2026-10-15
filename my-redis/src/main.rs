@@ -1,4 +1,5 @@
 use mini_redis::{Result, client};
+use rayon::prelude::*;
 use tokio::time::Duration;
 //
 // #[tokio::main]
@@ -18,8 +19,8 @@ use tokio::time::Duration;
 async fn sleep_then_print(timer: i32) {
     println!("Start timer {}", timer);
 
-    // std::thread::sleep(Duration::from_secs(4));
-    tokio::time::sleep(Duration::from_secs(1)).await;
+    // std::thread::sleep(Duration::from_secs(2));
+    tokio::time::sleep(Duration::from_secs(2)).await;
 
     println!("Timer {} done", timer);
 }
@@ -32,19 +33,28 @@ async fn main() {
         sleep_then_print(3),
     );
 }
+
 // async fn parallel_sum(nums: Vec<i32>) -> i32 {
 //     let (send, recv) = tokio::sync::oneshot::channel();
 //
 //     rayon::spawn(move || {
 //         // Perform an expensive computation.
-//         let mut sum = 0;
-//         for num in nums {
-//             sum += num;
-//         }
+//         let sum = nums.par_iter().sum();
 //
 //         // Send the result back to Tokio.
 //         let _ = send.send(sum);
 //     });
+//
+//     //     rayon::spawn(move || {
+//     //         // Perform an expensive computation.
+//     //         let mut sum = 0;
+//     //         for num in nums {
+//     //             sum += num;
+//     //         }
+//     //
+//     //         // Send the result back to Tokio.
+//     //         let _ = send.send(sum);
+//     //     });
 //
 //     // Wait for the rayon task.
 //     recv.await.expect("Panic in rayon::spawn")
@@ -52,6 +62,6 @@ async fn main() {
 //
 // #[tokio::main]
 // async fn main() {
-//     let nums = vec![1; 1024 * 1024];
+//     let nums = vec![1; 20245 * 10295];
 //     println!("{}", parallel_sum(nums).await);
 // }

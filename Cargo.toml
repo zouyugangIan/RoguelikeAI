@@ -1,6 +1,11 @@
 [workspace]
 members = [
-    "live", "my-redis"]
+    "cli",
+    "edge-lens",
+    "my-redis",
+    "sharedState",
+    "supabase-rust-check",
+]
 resolver = "2"
 
 [workspace.dependencies]

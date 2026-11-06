@@ -1,0 +1,4 @@
+/target
+.env
+# The workspace lockfile is maintained at the repository root.
+/Cargo.lock
